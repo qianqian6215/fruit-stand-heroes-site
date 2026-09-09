@@ -28,6 +28,7 @@ main {
 h1 { font-size: clamp(2.3rem, 7vw, 4rem); line-height: 1.05; }
 h2 { margin-top: 2.2rem; }
 a { color: #087f6c; }
+.lead { font-size: 1.2rem; max-width: 42rem; }
 .card {
   margin: 28px 0;
   padding: 24px;
@@ -40,3 +41,9 @@ a { color: #087f6c; }
 nav { display: flex; gap: 18px; flex-wrap: wrap; margin-top: 30px; }
 .muted { color: #61716b; }
 
+.facts { display: grid; gap: 14px; margin: 0; }
+.facts div { display: grid; grid-template-columns: minmax(90px, .6fr) 2fr; gap: 18px; }
+.facts dt { color: #61716b; font-weight: 700; }
+.facts dd { margin: 0; }
+.gallery { display: grid; gap: 18px; }
+.gallery img { display: block; width: 100%; border: 1px solid #edd9b6; border-radius: 16px; }
