@@ -3,24 +3,51 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Fruit Stand Battle, a free five-lane defense game for iPhone and iPad.">
-  <title>Fruit Stand Battle</title>
+  <meta name="description" content="Tiny heroes. Big defense. Meet Fruit Stand Battle, the free five-lane defense game for iPhone and iPad, and watch the full victory concert.">
+  <meta name="theme-color" content="#123c32">
+  <meta property="og:title" content="Fruit Stand Battle · Tiny heroes. Big defense.">
+  <meta property="og:description" content="Build your fruit squad. Protect five lively lanes. Celebrate with the full victory concert.">
+  <meta property="og:image" content="https://qianqian6215.github.io/fruit-stand-heroes-site/assets/hero.jpg">
+  <meta property="og:type" content="website">
+  <title>Fruit Stand Battle · Tiny heroes. Big defense.</title>
+  <link rel="preload" href="assets/fonts/LilitaOne-Regular.ttf" as="font" type="font/ttf" crossorigin>
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="home.css">
+  <script src="home.js" defer></script>
 </head>
-<body>
-  <main>
-    <p class="eyebrow">Fruit Stand Battle</p>
-    <h1>Tiny heroes.<br>Big defense.</h1>
-    <div class="card">
-      <p>Build a team of charming fruit heroes, collect Dewdrops, and protect five lively lanes from hungry animals and oversized bosses.</p>
-      <nav aria-label="Site links">
-        <a href="https://apps.apple.com/us/app/fruit-stand-battle/id6797271636">Download free</a>
-        <a href="press/">Press kit</a>
-        <a href="support/">Support</a>
-        <a href="privacy/">Privacy Policy</a>
-      </nav>
+<body class="home">
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header wrap">
+  <a class="brand" href="./" aria-label="Fruit Stand Battle home">FRUIT STAND BATTLE<span class="leaf" aria-hidden="true"></span></a>
+  <nav aria-label="Main navigation"><a href="#game">The game</a><a href="#watch">Watch</a><a href="support/">Support</a><a class="button small" href="https://apps.apple.com/us/app/fruit-stand-battle/id6797271636">Get the game</a></nav>
+</header>
+<main id="main">
+  <section class="hero wrap" id="game" aria-labelledby="hero-title">
+    <div class="hero-copy">
+      <h1 id="hero-title">Tiny heroes.<br>Big defense.</h1>
+      <p>Build your fruit squad. Protect five lively lanes.<br class="desktop-break"> Take on some very hungry visitors.</p>
+      <div class="hero-actions"><a class="button" href="https://apps.apple.com/us/app/fruit-stand-battle/id6797271636">Download free <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 5 7 7-7 7"/></svg></a><a class="button outline" href="#watch"><svg class="play-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 6 9 6-9 6Z"/></svg>Watch the film</a></div>
+      <p class="platform"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="2" width="12" height="20" rx="2"/><path d="M10 18h4"/></svg>For iPhone &amp; iPad</p>
     </div>
-    <p class="muted">Designed for landscape play on iPhone and iPad.</p>
-  </main>
+    <figure class="hero-art"><img src="assets/hero.jpg" alt="The fruit squad celebrating together at a sunny seaside market" width="1280" height="720" fetchpriority="high"><figcaption>Meet your fruit squad.</figcaption></figure>
+  </section>
+  <div class="features wrap" aria-label="About the game">
+    <div><span class="feature-number">01</span><p><strong>Five lanes</strong><span>Different paths. New challenges.</span></p></div>
+    <div><span class="feature-number">02</span><p><strong>Every fruit has a role</strong><span>Shoot, slow, support and more.</span></p></div>
+    <div><span class="feature-number">03</span><p><strong>Three worlds to protect</strong><span>From seaside markets to Cloudcrest.</span></p></div>
+  </div>
+  <section class="cinema" id="watch" aria-labelledby="cinema-title">
+    <div class="wrap">
+      <div class="cinema-heading"><h2 id="cinema-title">A victory worth<br><em>celebrating.</em></h2><div><p>The stand is safe. The stage is yours.</p><span>The full victory concert · 89 seconds</span></div></div>
+      <div class="video-stage">
+        <video id="concert" controls playsinline preload="none" poster="assets/hero.jpg" aria-label="Fruit Stand Battle victory concert"><source src="media/victory-concert-v1.mp4" type="video/mp4"><p>Your browser cannot play this video. <a href="media/victory-concert-v1.mp4">Open the film</a>.</p></video>
+        <button class="play-cover" type="button" aria-label="Play victory concert" hidden><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m8 5 11 7-11 7Z"/></svg></button>
+      </div>
+      <div class="film-meta"><p id="film-status" role="status">Watch the victory concert</p><a href="media/victory-concert-v1.mp4" download><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m-5-5 5 5 5-5M4 16v5h16v-5"/></svg>Download film</a></div>
+      <p id="film-error" class="film-error" hidden>The video could not load. Check your connection, then <button type="button" id="retry">try again</button>, or use Download film.</p>
+    </div>
+  </section>
+</main>
+<footer class="site-footer wrap"><a class="brand" href="./">FRUIT STAND<br>BATTLE</a><nav aria-label="Footer navigation"><a href="press/">Press kit</a><a href="support/">Support</a><a href="privacy/">Privacy</a></nav></footer>
 </body>
 </html>

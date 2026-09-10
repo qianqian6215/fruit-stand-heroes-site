@@ -47,3 +47,9 @@ nav { display: flex; gap: 18px; flex-wrap: wrap; margin-top: 30px; }
 .facts dd { margin: 0; }
 .gallery { display: grid; gap: 18px; }
 .gallery img { display: block; width: 100%; border: 1px solid #edd9b6; border-radius: 16px; }
+
+@font-face { font-family: Lilita; src: url("assets/fonts/LilitaOne-Regular.ttf") format("truetype"); font-display: swap; }
+body:not(.home) h1, body:not(.home) h2 { font-family: Lilita, sans-serif; font-weight: 400; }
+body:not(.home) .eyebrow { color: #123c32; }
+body:not(.home) nav a { text-underline-offset: 5px; }
+a:focus-visible { outline: 3px solid #dd8a38; outline-offset: 4px; }
