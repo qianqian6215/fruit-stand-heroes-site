@@ -129,12 +129,6 @@ const gameplayError = document.querySelector('#gameplay-error');
 gameplay.addEventListener('error', () => { gameplayError.hidden = false; });
 gameplay.addEventListener('playing', () => { gameplayError.hidden = true; });
 
-// Keep an expiring community invitation from becoming a dead end.
-if (Date.now() >= Date.parse('2026-10-15T13:58:32Z')) {
-  const discordLink = document.querySelector('#discord-link');
-  discordLink.href = 'mailto:maoqianqiansea@gmail.com?subject=Discord%20community%20invite';
-  discordLink.textContent = 'Request a Discord invite ↗';
-}
 storyVideo.addEventListener('waiting', () => { if (dialog.open && !storyVideo.paused) storyStatus.textContent = 'Buffering… Your story will resume shortly.'; });
 concert.addEventListener('waiting', () => { if (!concert.paused) status.textContent = 'Buffering… The concert will resume shortly.'; });
 
