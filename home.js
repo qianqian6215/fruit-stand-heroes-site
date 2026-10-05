@@ -39,6 +39,7 @@ function openStory(id, trigger) {
   concert.pause(); storyTrigger = trigger;
   document.querySelector('#story-dialog-title').textContent = story.name;
   document.querySelector('#story-direct').href = story.video;
+  document.querySelector('#story-hd').href = story.originalVideo || story.video;
   storyVideo.src = story.video; storyVideo.poster = story.poster;
   storyVideo.setAttribute('aria-label', `${story.name} animated story`);
   document.body.classList.add('dialog-open'); dialog.showModal(); playStory();
@@ -117,3 +118,22 @@ menu.addEventListener('click', () => {
 });
 nav.addEventListener('click', event => { if (event.target.closest('a')) closeMenu(); });
 document.addEventListener('keydown', event => { if (event.key === 'Escape' && menu.getAttribute('aria-expanded') === 'true') { closeMenu(); menu.focus(); } });
+
+// Only one film should make progress at a time, regardless of its entry point.
+const siteVideos = [...document.querySelectorAll('video')];
+for (const current of siteVideos) current.addEventListener('playing', () => {
+  for (const other of siteVideos) if (other !== current) other.pause();
+});
+const gameplay = document.querySelector('#gameplay');
+const gameplayError = document.querySelector('#gameplay-error');
+gameplay.addEventListener('error', () => { gameplayError.hidden = false; });
+gameplay.addEventListener('playing', () => { gameplayError.hidden = true; });
+
+// Keep an expiring community invitation from becoming a dead end.
+if (Date.now() >= Date.parse('2026-10-15T13:58:32Z')) {
+  const discordLink = document.querySelector('#discord-link');
+  discordLink.href = 'mailto:maoqianqiansea@gmail.com?subject=Discord%20community%20invite';
+  discordLink.textContent = 'Request a Discord invite ↗';
+}
+storyVideo.addEventListener('waiting', () => { if (dialog.open && !storyVideo.paused) storyStatus.textContent = 'Buffering… Your story will resume shortly.'; });
+concert.addEventListener('waiting', () => { if (!concert.paused) status.textContent = 'Buffering… The concert will resume shortly.'; });

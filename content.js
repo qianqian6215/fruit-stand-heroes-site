@@ -7,7 +7,8 @@ window.FRUIT_CONTENT = {
       "name": "Grape",
       "tagline": "Small fruit. Quite the wake-up call.",
       "poster": "assets/stories/grape-cover-v2.webp",
-      "video": "media/stories/grape.mp4",
+      "video": "media/stream/grape.mp4",
+      "originalVideo": "media/stories/grape.mp4",
       "duration": "0:45",
       "position": "50% 50%"
     },
@@ -16,7 +17,8 @@ window.FRUIT_CONTENT = {
       "name": "Dew",
       "tagline": "A brighter day, one drop at a time.",
       "poster": "assets/stories/dew-cover-v2.webp",
-      "video": "media/stories/dew.mp4",
+      "video": "media/stream/dew.mp4",
+      "originalVideo": "media/stories/dew.mp4",
       "duration": "0:44",
       "position": "50% 50%"
     },
@@ -25,7 +27,8 @@ window.FRUIT_CONTENT = {
       "name": "Peach",
       "tagline": "A little kindness goes a long way.",
       "poster": "assets/stories/peach-cover-v2.webp",
-      "video": "media/stories/peach.mp4",
+      "video": "media/stream/peach.mp4",
+      "originalVideo": "media/stories/peach.mp4",
       "duration": "0:45",
       "position": "50% 50%"
     }
