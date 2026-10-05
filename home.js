@@ -137,3 +137,23 @@ if (Date.now() >= Date.parse('2026-10-15T13:58:32Z')) {
 }
 storyVideo.addEventListener('waiting', () => { if (dialog.open && !storyVideo.paused) storyStatus.textContent = 'Buffering… Your story will resume shortly.'; });
 concert.addEventListener('waiting', () => { if (!concert.paused) status.textContent = 'Buffering… The concert will resume shortly.'; });
+
+// Explicit play target: poster taps and the hero action both start the clip.
+const gameplayPlay = document.querySelector('#gameplay-play');
+gameplayPlay.hidden = false;
+async function startGameplay() {
+  gameplayError.hidden = true;
+  for (const other of siteVideos) if (other !== gameplay) other.pause();
+  if (gameplay.error) gameplay.load();
+  if (gameplay.ended) gameplay.currentTime = 0;
+  try { await gameplay.play(); }
+  catch (reason) {
+    if (reason.name !== 'AbortError') { gameplayError.hidden = false; gameplayPlay.hidden = false; }
+  }
+}
+gameplayPlay.addEventListener('click', startGameplay);
+document.querySelector('.hero-actions a[href="#game"]').addEventListener('click', startGameplay);
+gameplay.addEventListener('playing', () => { gameplayPlay.hidden = true; });
+gameplay.addEventListener('pause', () => { gameplayPlay.hidden = false; });
+gameplay.addEventListener('ended', () => { gameplayPlay.hidden = false; });
+gameplay.addEventListener('error', () => { gameplayPlay.hidden = false; });
