@@ -18,9 +18,21 @@ function icon(name) {
   const node = element('img', 'icon');
   node.src = `assets/icons/${name}.svg`; node.alt = ''; return node;
 }
+// Keep off-screen covers out of the initial network queue.
+function revealMedia(node) {
+  if (node.dataset.src) { node.src = node.dataset.src; delete node.dataset.src; }
+  if (node.dataset.poster) { node.poster = node.dataset.poster; delete node.dataset.poster; }
+}
+const mediaObserver = 'IntersectionObserver' in window ? new IntersectionObserver(entries => {
+  for (const entry of entries) if (entry.isIntersecting) {
+    revealMedia(entry.target); mediaObserver.unobserve(entry.target);
+  }
+}, { rootMargin: '200px' }) : null;
+function deferMedia(node) { if (mediaObserver) mediaObserver.observe(node); else revealMedia(node); }
+document.querySelectorAll('video[data-poster]').forEach(deferMedia);
 function poster(src, name, position) {
   const node = element('img');
-  node.src = src; node.alt = name; node.loading = 'lazy';
+  node.dataset.src = src; node.alt = name; node.loading = 'lazy'; node.decoding = 'async'; deferMedia(node);
   node.width = 720; node.height = 1280; node.style.objectPosition = position; return node;
 }
 async function playStory() {
@@ -38,8 +50,6 @@ function openStory(id, trigger) {
   if (!story) return;
   concert.pause(); storyTrigger = trigger;
   document.querySelector('#story-dialog-title').textContent = story.name;
-  document.querySelector('#story-direct').href = story.video;
-  document.querySelector('#story-hd').href = story.originalVideo || story.video;
   storyVideo.src = story.video; storyVideo.poster = story.poster;
   storyVideo.setAttribute('aria-label', `${story.name} animated story`);
   document.body.classList.add('dialog-open'); dialog.showModal(); playStory();
@@ -95,7 +105,7 @@ const status = document.querySelector('#film-status');
 const error = document.querySelector('#film-error');
 play.hidden = false;
 async function startConcert() {
-  storyVideo.pause(); error.hidden = true; play.hidden = true; status.textContent = 'Loading the concert…';
+  revealMedia(concert); storyVideo.pause(); error.hidden = true; play.hidden = true; status.textContent = 'Loading the concert…';
   try { await concert.play(); }
   catch (reason) {
     if (reason.name === 'AbortError') return;
@@ -136,7 +146,7 @@ concert.addEventListener('waiting', () => { if (!concert.paused) status.textCont
 const gameplayPlay = document.querySelector('#gameplay-play');
 gameplayPlay.hidden = false;
 async function startGameplay() {
-  gameplayError.hidden = true;
+  revealMedia(gameplay); gameplayError.hidden = true;
   for (const other of siteVideos) if (other !== gameplay) other.pause();
   if (gameplay.error) gameplay.load();
   if (gameplay.ended) gameplay.currentTime = 0;
@@ -151,3 +161,5 @@ gameplay.addEventListener('playing', () => { gameplayPlay.hidden = true; });
 gameplay.addEventListener('pause', () => { gameplayPlay.hidden = false; });
 gameplay.addEventListener('ended', () => { gameplayPlay.hidden = false; });
 gameplay.addEventListener('error', () => { gameplayPlay.hidden = false; });
+
+document.querySelector('#gameplay-retry').addEventListener('click', startGameplay);

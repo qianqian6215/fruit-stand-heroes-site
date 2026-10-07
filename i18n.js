@@ -28,6 +28,7 @@
   const textSources = new WeakMap(); const attributeSources = new WeakMap();
   let english = {}; let dictionary = {}; let lookup = new Map(); let sequence = 0;
   const cache = new Map();
+  if (window.FRUIT_ENGLISH) cache.set('en', Promise.resolve(window.FRUIT_ENGLISH));
   const gameplayMedia = {
     en: { video: 'media/sunny-market-gameplay-ios-20260906.mp4', poster: 'assets/gameplay-ios-20260906.jpg' },
     id: { video: 'media/gameplay-id-20261007.mp4', poster: 'assets/gameplay-id-20261007.jpg' },
@@ -97,7 +98,8 @@
     if (source.getAttribute('src') === media.video) return;
     video.pause();
     source.setAttribute('src', media.video);
-    video.setAttribute('poster', media.poster);
+    if (video.hasAttribute('poster')) video.setAttribute('poster', media.poster);
+    else video.dataset.poster = media.poster;
     video.querySelector('a')?.setAttribute('href', media.video);
     document.querySelector('#gameplay-error a')?.setAttribute('href', media.video);
     video.load();
