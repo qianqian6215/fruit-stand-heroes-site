@@ -38,6 +38,11 @@
     id: 'official_site_id_oct2026',
     th: 'official_site_th_oct2026',
   };
+  const campaignAliases = {
+    'ph-offline': 'official_site_ph_offline_oct2026',
+  };
+  const campaignAlias = new URL(location.href).searchParams.get('campaign');
+  const campaignOverride = campaignAliases[campaignAlias] || null;
   async function bundle(code) {
     if (!cache.has(code)) cache.set(code, fetch(new URL(`locales/${code}.json${version}`,root)).then(r => {if(!r.ok) throw Error('Language unavailable'); return r.json();}).catch(error => {cache.delete(code); throw error;}));
     return cache.get(code);
@@ -98,7 +103,7 @@
     video.load();
   }
   function setStoreCampaign(code) {
-    const campaign = storeCampaigns[code] || storeCampaigns.en;
+    const campaign = campaignOverride || storeCampaigns[code] || storeCampaigns.en;
     for (const link of document.querySelectorAll('a[href*="apps.apple.com"],a[href*="play.google.com/store/apps"]')) {
       const url = new URL(link.href);
       if (url.hostname === 'apps.apple.com') url.searchParams.set('ct', campaign);
@@ -130,7 +135,9 @@
         if (a.getAttribute('href').startsWith('#')) continue;
         const url = new URL(a.getAttribute('href'),location.href);
         if (url.origin === location.origin && url.pathname.startsWith(root.pathname) && !a.hasAttribute('download') && (url.pathname.endsWith('/') || url.pathname.endsWith('.html'))) {
-          url.searchParams.set('lang',code); a.href = url.href;
+          url.searchParams.set('lang',code);
+          if (campaignOverride) url.searchParams.set('campaign',campaignAlias);
+          a.href = url.href;
         }
       }
     } catch {
