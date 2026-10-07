@@ -16,6 +16,11 @@
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://qianqian6215.github.io/fruit-stand-heroes-site/th/game-offline-android/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
     <loc>https://qianqian6215.github.io/fruit-stand-heroes-site/press/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
