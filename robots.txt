@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://qianqian6215.github.io/fruit-stand-heroes-site/sitemap.xml
