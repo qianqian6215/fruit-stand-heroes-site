@@ -28,6 +28,11 @@
   const textSources = new WeakMap(); const attributeSources = new WeakMap();
   let english = {}; let dictionary = {}; let lookup = new Map(); let sequence = 0;
   const cache = new Map();
+  const gameplayMedia = {
+    en: { video: 'media/sunny-market-gameplay-ios-20260906.mp4', poster: 'assets/gameplay-ios-20260906.jpg' },
+    id: { video: 'media/gameplay-id-20261007.mp4', poster: 'assets/gameplay-id-20261007.jpg' },
+    th: { video: 'media/gameplay-th-20261007.mp4', poster: 'assets/gameplay-th-20261007.jpg' },
+  };
   async function bundle(code) {
     if (!cache.has(code)) cache.set(code, fetch(new URL(`locales/${code}.json${version}`,root)).then(r => {if(!r.ok) throw Error('Language unavailable'); return r.json();}).catch(error => {cache.delete(code); throw error;}));
     return cache.get(code);
@@ -74,6 +79,19 @@
     observer.observe(document.documentElement,{childList:true,subtree:true,characterData:true,attributes:true,attributeFilter:['alt','aria-label']});
   }
   const observer = new MutationObserver(walk);
+  function setGameplayMedia(code) {
+    const video = document.querySelector('#gameplay');
+    const source = video?.querySelector('source');
+    if (!video || !source) return;
+    const media = gameplayMedia[code] || gameplayMedia.en;
+    if (source.getAttribute('src') === media.video) return;
+    video.pause();
+    source.setAttribute('src', media.video);
+    video.setAttribute('poster', media.poster);
+    video.querySelector('a')?.setAttribute('href', media.video);
+    document.querySelector('#gameplay-error a')?.setAttribute('href', media.video);
+    video.load();
+  }
   async function change(code, remember=false) {
     if (!codes.has(code)) return;
     const token = ++sequence;
@@ -82,6 +100,7 @@
       const [base,translated] = await Promise.all([bundle('en'),bundle(code)]);
       if (token !== sequence) return;
       english = base; lookup = new Map(Object.entries(base).map(([key,value])=>[value,key])); dictionary = translated; active = code;
+      setGameplayMedia(code);
       walk();
       if (remember) {
         try { localStorage.setItem('fruit-site-language',code); } catch {}
