@@ -33,6 +33,11 @@
     id: { video: 'media/gameplay-id-20261007.mp4', poster: 'assets/gameplay-id-20261007.jpg' },
     th: { video: 'media/gameplay-th-20261007.mp4', poster: 'assets/gameplay-th-20261007.jpg' },
   };
+  const storeCampaigns = {
+    en: 'official_site_sep2026',
+    id: 'official_site_id_oct2026',
+    th: 'official_site_th_oct2026',
+  };
   async function bundle(code) {
     if (!cache.has(code)) cache.set(code, fetch(new URL(`locales/${code}.json${version}`,root)).then(r => {if(!r.ok) throw Error('Language unavailable'); return r.json();}).catch(error => {cache.delete(code); throw error;}));
     return cache.get(code);
@@ -92,6 +97,19 @@
     document.querySelector('#gameplay-error a')?.setAttribute('href', media.video);
     video.load();
   }
+  function setStoreCampaign(code) {
+    const campaign = storeCampaigns[code] || storeCampaigns.en;
+    for (const link of document.querySelectorAll('a[href*="apps.apple.com"],a[href*="play.google.com/store/apps"]')) {
+      const url = new URL(link.href);
+      if (url.hostname === 'apps.apple.com') url.searchParams.set('ct', campaign);
+      if (url.hostname === 'play.google.com') {
+        url.searchParams.set('utm_source', 'official_site');
+        url.searchParams.set('utm_medium', 'website');
+        url.searchParams.set('utm_campaign', campaign);
+      }
+      link.href = url.href;
+    }
+  }
   async function change(code, remember=false) {
     if (!codes.has(code)) return;
     const token = ++sequence;
@@ -101,6 +119,7 @@
       if (token !== sequence) return;
       english = base; lookup = new Map(Object.entries(base).map(([key,value])=>[value,key])); dictionary = translated; active = code;
       setGameplayMedia(code);
+      setStoreCampaign(code);
       walk();
       if (remember) {
         try { localStorage.setItem('fruit-site-language',code); } catch {}
