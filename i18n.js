@@ -38,6 +38,7 @@
     en: 'official_site_sep2026',
     id: 'official_site_id_oct2026',
     th: 'official_site_th_oct2026',
+    ja: 'official_site_jp_home_oct2026',
   };
   const campaignAliases = {
     'ph-offline': 'official_site_ph_offline_oct2026',
@@ -127,6 +128,7 @@
       english = base; lookup = new Map(Object.entries(base).map(([key,value])=>[value,key])); dictionary = translated; active = code;
       setGameplayMedia(code);
       setStoreCampaign(code);
+      document.querySelector('[data-ja-guide]')?.toggleAttribute('hidden', code !== 'ja');
       walk();
       if (remember) {
         try { localStorage.setItem('fruit-site-language',code); } catch {}
