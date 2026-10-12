@@ -128,7 +128,9 @@
       english = base; lookup = new Map(Object.entries(base).map(([key,value])=>[value,key])); dictionary = translated; active = code;
       setGameplayMedia(code);
       setStoreCampaign(code);
-      document.querySelector('[data-ja-guide]')?.toggleAttribute('hidden', code !== 'ja');
+      for (const guide of document.querySelectorAll('[data-locale-guide]')) {
+        guide.toggleAttribute('hidden', guide.dataset.localeGuide !== code);
+      }
       walk();
       if (remember) {
         try { localStorage.setItem('fruit-site-language',code); } catch {}
