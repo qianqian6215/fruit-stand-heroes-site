@@ -30,7 +30,7 @@
   const cache = new Map();
   if (window.FRUIT_ENGLISH) cache.set('en', Promise.resolve(window.FRUIT_ENGLISH));
   const gameplayMedia = {
-    en: { video: 'media/sunny-market-gameplay-ios-20260906.mp4', poster: 'assets/gameplay-ios-20260906.jpg' },
+    en: { video: 'media/gameplay-three-worlds-en-20261010.mp4', poster: 'assets/gameplay-three-worlds-en-20261010.jpg' },
     id: { video: 'media/gameplay-id-20261007.mp4', poster: 'assets/gameplay-id-20261007.jpg' },
     th: { video: 'media/gameplay-th-20261007.mp4', poster: 'assets/gameplay-th-20261007.jpg' },
   };
