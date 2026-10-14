@@ -1,6 +1,11 @@
 'use strict';
 // Array order controls display order. Extend either list to add content.
 window.FRUIT_CONTENT = {
+  "worlds": [
+    {"id":"sunny-market","name":"Sunny Market","tagline":"A peaceful morning. A market worth protecting.","poster":"assets/worlds/sunny-market.webp","video":"media/worlds/sunny-market.mp4","duration":"0:54","position":"50% 50%"},
+    {"id":"moonlit-coast","name":"Moonlit Coast","tagline":"New friends. New trouble beneath the moon.","poster":"assets/worlds/moonlit-coast.webp","video":"media/worlds/moonlit-coast.mp4","duration":"0:30","position":"50% 50%"},
+    {"id":"cloudcrest","name":"Cloudcrest","tagline":"Follow the wind. Stand together above the clouds.","poster":"assets/worlds/cloudcrest.webp","video":"media/worlds/cloudcrest.mp4","duration":"0:30","position":"50% 50%"}
+  ],
   "stories": [
     {
       "id": "grape",

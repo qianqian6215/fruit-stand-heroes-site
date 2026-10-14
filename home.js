@@ -46,12 +46,15 @@ async function playStory() {
   }
 }
 function openStory(id, trigger) {
-  const story = content.stories.find(item => item.id === id);
+  const world = content.worlds.find(item => item.id === id);
+  const story = world || content.stories.find(item => item.id === id);
   if (!story) return;
   concert.pause(); storyTrigger = trigger;
+  dialog.classList.toggle('world-dialog', Boolean(world));
+  dialog.querySelector('.eyebrow').textContent = world ? 'EXPLORE THE WORLD · CHAPTER FILM' : 'FRUIT STORIES · ANIMATED SHORT';
   document.querySelector('#story-dialog-title').textContent = story.name;
   storyVideo.src = story.video; storyVideo.poster = story.poster;
-  storyVideo.setAttribute('aria-label', `${story.name} animated story`);
+  storyVideo.setAttribute('aria-label', world ? story.name : `${story.name} animated story`);
   document.body.classList.add('dialog-open'); dialog.showModal(); playStory();
 }
 for (const story of content.stories) {
@@ -64,6 +67,20 @@ for (const story of content.stories) {
   button.addEventListener('click', () => openStory(story.id, button));
   card.append(button, element('h3', '', story.name), element('p', 'tagline', story.tagline), element('p', 'type', 'ANIMATED SHORT'));
   document.querySelector('#story-grid').append(card);
+}
+for (const [index, world] of content.worlds.entries()) {
+  const card = element('article', 'story-card world-card'); card.id = `world-${world.id}`;
+  const button = element('button', 'story-poster'); button.type = 'button';
+  button.setAttribute('aria-labelledby', `world-name-${world.id} world-watch-${world.id}`);
+  const cover = poster(world.poster, '', world.position); cover.width = 768; cover.height = 432;
+  const play = element('span', 'story-play'); play.append(icon('play-white'));
+  button.append(cover, play, element('span', 'duration', world.duration));
+  button.addEventListener('click', () => openStory(world.id, button));
+  const title = element('h3', '', world.name); title.id = `world-name-${world.id}`;
+  const watch = element('span', 'world-watch', 'Watch chapter film'); watch.id = `world-watch-${world.id}`;
+  const number = element('span', 'world-number', String(index + 1).padStart(2, '0')); number.setAttribute('aria-hidden', 'true');
+  card.append(number, title, element('p', 'tagline', world.tagline), button, watch);
+  document.querySelector('#world-grid').append(card);
 }
 function selectCharacter(character) {
   const detail = document.querySelector('#character-detail'); detail.replaceChildren();

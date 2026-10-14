@@ -26,3 +26,7 @@ html{scroll-behavior:smooth;scroll-padding-top:24px}
 .gameplay-stage{position:relative}.gameplay-play{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);display:grid;place-items:center;width:64px;height:64px;border:0;border-radius:50%;background:var(--mango);cursor:pointer;box-shadow:0 3px 18px #123c3240}.gameplay-play img{width:28px;height:28px}.gameplay-play:hover{background:#ffe989}
 
 .hero-actions .hero-watch{flex-basis:100%;margin-top:4px;min-height:38px;width:fit-content}.hero-actions .button{font-size:14px;padding-inline:20px}
+
+/* Chapter films introduce the world before the character stories. */
+.worlds{padding-top:76px}.world-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:26px;margin-top:44px}.world-card{text-align:left;border-top:1px solid #bdc9b3;padding-top:20px;position:relative}.world-number{font:16px Lilita,sans-serif;color:#718657}.world-card h3{margin-top:10px}.world-card .tagline{min-height:3.2em;margin:10px 0 22px}.world-card .story-poster{aspect-ratio:16/9}.world-watch{display:block;font-size:12px;font-weight:700;margin-top:14px}.world-dialog{width:min(1000px,calc(100% - 24px))}.world-dialog #story-video{height:auto;aspect-ratio:16/9;max-height:66dvh}.worlds .story-note{max-width:650px;margin-inline:auto!important}
+@media(max-width:760px){.worlds{padding-top:48px}.world-grid{grid-template-columns:1fr;gap:36px;margin-top:32px}.world-card .tagline{min-height:0;margin-bottom:18px}.world-card h3{font-size:32px}.worlds .section-heading h2{font-size:44px}}
