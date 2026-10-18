@@ -296,7 +296,7 @@ document.querySelector('#gameplay-retry').addEventListener('click', startGamepla
     th: { video: 'media/gameplay-th-20261007.mp4', poster: 'assets/gameplay-th-20261007.jpg' },
   };
   const storeCampaigns = {
-    en: 'official_site_sep2026',
+    en: 'official_site_choice_oct2026',
     id: 'official_site_id_oct2026',
     th: 'official_site_th_oct2026',
     ja: 'official_site_jp_home_oct2026',
