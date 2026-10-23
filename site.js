@@ -297,7 +297,7 @@ document.querySelector('#gameplay-retry').addEventListener('click', startGamepla
   };
   const storeCampaigns = {
     en: 'official_site_choice_oct2026',
-    id: 'official_site_id_oct2026',
+    id: 'official_site_id_choice_oct2026',
     th: 'official_site_th_oct2026',
     vi: 'official_site_vi_choice_oct2026',
     ja: 'official_site_jp_home_oct2026',
