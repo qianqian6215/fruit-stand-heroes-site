@@ -21,7 +21,7 @@
   <meta name="twitter:description" content="One lane is about to fall. Spend now or save for a stronger hero? Free on the App Store.">
   <meta name="twitter:image" content="https://fruitstandbattle.com/assets/gameplay-three-worlds-en-20261010.jpg">
   <link rel="icon" href="../assets/icons/leaf.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="../style.css?v=20261025ratio">
   <style>
     body { background: linear-gradient(#fff7df 0, #fffaf0 500px); }
     main { width: min(920px, calc(100% - 32px)); padding-top: 32px; }
@@ -32,6 +32,9 @@
     .hero-copy { max-width: 720px; }
     .button { display: inline-block; padding: 13px 20px; border-radius: 999px; background: #087f6c; color: #fff; font-weight: 800; text-decoration: none; box-shadow: 0 8px 22px rgb(8 127 108 / 22%); }
     .button:hover { background: #056956; }
+    .store-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; }
+    .button.secondary { background: #fff; color: #087f6c; border: 2px solid #087f6c; box-shadow: none; }
+    .button.secondary:hover { background: #e9f5ef; }
     .trust { display: flex; flex-wrap: wrap; gap: 10px; margin: 24px 0 34px; padding: 0; list-style: none; }
     .trust li { padding: 7px 12px; border: 1px solid #e8cf9d; border-radius: 999px; background: rgb(255 255 255 / 72%); font-weight: 700; }
     .hero-shot { margin: 0 0 38px; }
@@ -40,7 +43,7 @@
     figcaption { margin-top: 9px; color: #61716b; }
     .worlds { display: grid; gap: 22px; }
     .worlds figure { padding: 12px; border-radius: 20px; background: #fff; border: 1px solid #edd9b6; }
-    .worlds img { display: block; width: 100%; border-radius: 13px; }
+    .worlds img { display: block; width: 100%; height: auto; border-radius: 13px; }
     .worlds strong { color: #18362f; }
     .facts { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     .facts div { display: block; padding: 16px; border-radius: 14px; background: #fffaf0; }
@@ -49,6 +52,7 @@
     .faq summary { cursor: pointer; font-weight: 800; }
     .faq p { margin-bottom: 0; }
     .cta { text-align: center; padding: 32px; }
+    .cta .store-actions { justify-content: center; }
     footer { width: min(920px, calc(100% - 32px)); margin: 0 auto; padding: 0 0 48px; color: #61716b; }
     footer a { margin-right: 18px; }
     @media (min-width: 720px) {
@@ -91,7 +95,10 @@
       <p class="eyebrow">FREE ON THE APP STORE</p>
       <h1 id="page-title">A free offline tower defense game for iPhone and iPad</h1>
       <p class="lead">One lane is about to fall. Spend Dewdrops now to reinforce it, or save for a stronger hero? Defend five visible lanes with a tiny fruit squad and face giant animal bosses across three colorful worlds.</p>
-      <a class="button" href="https://apps.apple.com/app/fruit-stand-battle/id6797271636?pt=126491309&amp;ct=official_site_ios_offline_oct2026&amp;mt=8">Get Fruit Stand Battle on the App Store</a>
+      <div class="store-actions">
+        <a class="button" href="https://apps.apple.com/app/fruit-stand-battle/id6797271636?pt=126491309&amp;ct=official_site_ios_offline_oct2026&amp;mt=8">Download on App Store</a>
+        <a class="button secondary" href="https://play.google.com/store/apps/details?id=com.veralearn.zxx.fruitstandbattle&amp;utm_source=official_site&amp;utm_medium=seo&amp;utm_campaign=offline_android_oct2026">Get it on Google Play</a>
+      </div>
       <ul class="trust" aria-label="Game highlights">
         <li>Works offline after installation</li>
         <li>No ads</li>
@@ -149,8 +156,11 @@
     <section class="card cta" aria-labelledby="cta-title">
       <p class="eyebrow">YOUR SQUAD IS WAITING</p>
       <h2 id="cta-title">Choose a lane and start defending.</h2>
-      <p>Free on iPhone and iPad. Works offline after installation.</p>
-      <a class="button" href="https://apps.apple.com/app/fruit-stand-battle/id6797271636?pt=126491309&amp;ct=official_site_ios_offline_oct2026&amp;mt=8">Download on the App Store</a>
+      <p>Free on iPhone, iPad and Android. Works offline after installation.</p>
+      <div class="store-actions">
+        <a class="button" href="https://apps.apple.com/app/fruit-stand-battle/id6797271636?pt=126491309&amp;ct=official_site_ios_offline_oct2026&amp;mt=8">Download on App Store</a>
+        <a class="button secondary" href="https://play.google.com/store/apps/details?id=com.veralearn.zxx.fruitstandbattle&amp;utm_source=official_site&amp;utm_medium=seo&amp;utm_campaign=offline_android_oct2026">Get it on Google Play</a>
+      </div>
     </section>
   </main>
   <footer>

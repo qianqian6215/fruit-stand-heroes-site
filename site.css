@@ -48,6 +48,8 @@ nav { display: flex; gap: 18px; flex-wrap: wrap; margin-top: 30px; }
 .facts dd { margin: 0; }
 .gallery { display: grid; gap: 18px; }
 .gallery img { display: block; width: 100%; border: 1px solid #edd9b6; border-radius: 16px; }
+/* Width/height attributes reserve space; preserve the source image ratio when CSS makes it responsive. */
+main img[width][height] { height: auto; }
 
 @font-face { font-family: Lilita; src: url("assets/fonts/LilitaOne-Regular.ttf") format("truetype"); font-display: swap; }
 body:not(.home) h1, body:not(.home) h2 { font-family: Lilita, sans-serif; font-weight: 400; }
