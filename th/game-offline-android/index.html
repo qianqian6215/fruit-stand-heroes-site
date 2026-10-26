@@ -11,7 +11,7 @@
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Fruit Stand Battle">
   <meta property="og:title" content="หนึ่งเลนใกล้แตก คุณจะส่งใครลงไป?">
-  <meta property="og:description" content="ใช้ Dewdrops ตอนนี้หรือเก็บไว้สำหรับฮีโร่ที่แข็งแกร่งกว่า? เกม Tower Defense ออฟไลน์ฟรี 5 เลนบน Android">
+  <meta property="og:description" content="ใช้ Dewdrops ตอนนี้หรือเก็บไว้สำหรับฮีโร่ที่แข็งแกร่งกว่า? เกม Tower Defense ออฟไลน์ฟรี 5 เลนบน Android, iPhone และ iPad">
   <meta property="og:url" content="https://fruitstandbattle.com/th/game-offline-android/">
   <meta property="og:image" content="https://fruitstandbattle.com/assets/th/01-lane-falling.jpg">
   <meta property="og:image:width" content="1080">
@@ -19,7 +19,7 @@
   <meta property="og:image:alt" content="หนึ่งเลนกำลังตกอยู่ในอันตรายใน Fruit Stand Battle">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="เกม Tower Defense ออฟไลน์ฟรีสำหรับ Android">
-  <meta name="twitter:description" content="ป้องกัน 5 เลนในสามโลก ไม่มีโฆษณาและไม่มีการซื้อในแอป">
+  <meta name="twitter:description" content="ป้องกัน 5 เลนในสามโลกบน Android, iPhone หรือ iPad ไม่มีโฆษณาและไม่มีการซื้อในแอป">
   <meta name="twitter:image" content="https://fruitstandbattle.com/assets/th/01-lane-falling.jpg">
   <link rel="icon" href="../../assets/icons/leaf.svg" type="image/svg+xml">
   <link rel="stylesheet" href="../../style.css">
@@ -31,6 +31,8 @@
     .hero { max-width:760px; }
     h1 { margin:.25rem 0 1rem; }
     .button { display:inline-block; padding:13px 20px; border-radius:999px; background:#087f6c; color:#fff; font-weight:800; text-decoration:none; box-shadow:0 8px 22px rgb(8 127 108 / 22%); }
+    .store-buttons { display:flex; flex-wrap:wrap; justify-content:flex-start; gap:10px; }
+    .cta .store-buttons { justify-content:center; }
     .trust { display:flex; flex-wrap:wrap; gap:10px; margin:24px 0 34px; padding:0; list-style:none; }
     .trust li { padding:7px 12px; border:1px solid #cddfba; border-radius:999px; background:rgb(255 255 255 / 78%); font-weight:700; }
     .screens { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:16px; margin:0 0 38px; }
@@ -61,10 +63,13 @@
     "url": "https://fruitstandbattle.com/th/game-offline-android/",
     "image": "https://fruitstandbattle.com/assets/th/01-lane-falling.jpg",
     "applicationCategory": "GameApplication",
-    "operatingSystem": "Android",
+    "operatingSystem": ["Android", "iOS"],
     "genre": ["Tower defense", "Strategy"],
     "playMode": "SinglePlayer",
-    "offers": {"@type":"Offer","price":"0","priceCurrency":"THB","url":"https://play.google.com/store/apps/details?id=com.veralearn.zxx.fruitstandbattle&hl=th&gl=TH"}
+    "offers": [
+      {"@type":"Offer","price":"0","priceCurrency":"THB","url":"https://play.google.com/store/apps/details?id=com.veralearn.zxx.fruitstandbattle&hl=th&gl=TH"},
+      {"@type":"Offer","price":"0","priceCurrency":"THB","url":"https://apps.apple.com/th/app/fruit-stand-battle/id6797271636"}
+    ]
   }
   </script>
 </head>
@@ -76,10 +81,13 @@
     </header>
 
     <section class="hero" aria-labelledby="title">
-      <p class="eyebrow">ดาวน์โหลดฟรีบน GOOGLE PLAY</p>
+      <p class="eyebrow">ดาวน์โหลดฟรีบน ANDROID, IPHONE และ IPAD</p>
       <h1 id="title">หนึ่งเลนใกล้แตก คุณจะส่งใครลงไป?</h1>
       <p class="lead">ใช้ Dewdrops ตอนนี้เพื่อช่วยเลนนี้ หรือเก็บไว้สำหรับฮีโร่ผลไม้ที่แข็งแกร่งกว่าก่อนบอสจะมา? มองครบทั้งห้าเลนแล้วเลือกจังหวะให้ดี</p>
-      <a class="button" href="https://play.google.com/store/apps/details?id=com.veralearn.zxx.fruitstandbattle&amp;hl=th&amp;gl=TH&amp;utm_source=official_site&amp;utm_medium=landing_page&amp;utm_campaign=official_site_th_choice_oct2026">ดาวน์โหลดบน Google Play</a>
+      <div class="store-buttons" aria-label="เลือกร้านแอป">
+        <a class="button" href="https://play.google.com/store/apps/details?id=com.veralearn.zxx.fruitstandbattle&amp;hl=th&amp;gl=TH&amp;utm_source=official_site&amp;utm_medium=landing_page&amp;utm_campaign=official_site_th_choice_oct2026">ดาวน์โหลดบน Google Play</a>
+        <a class="button" href="https://apps.apple.com/th/app/fruit-stand-battle/id6797271636">ดาวน์โหลดบน App Store</a>
+      </div>
       <ul class="trust" aria-label="จุดเด่นของเกม">
         <li>เล่นออฟไลน์ได้</li>
         <li>ไม่มีโฆษณา</li>
@@ -127,8 +135,11 @@
     <section class="card cta" aria-labelledby="cta-title">
       <p class="eyebrow">ทีมของคุณกำลังรออยู่</p>
       <h2 id="cta-title">เลือกเลน แล้วส่งฮีโร่ลงสนาม</h2>
-      <p>ฟรีบน Android เล่นออฟไลน์ได้ ไม่มีโฆษณา</p>
-      <a class="button" href="https://play.google.com/store/apps/details?id=com.veralearn.zxx.fruitstandbattle&amp;hl=th&amp;gl=TH&amp;utm_source=official_site&amp;utm_medium=landing_page&amp;utm_campaign=official_site_th_choice_oct2026">ดาวน์โหลดบน Google Play</a>
+      <p>ฟรีบน Android, iPhone และ iPad เล่นออฟไลน์ได้ ไม่มีโฆษณา</p>
+      <div class="store-buttons" aria-label="เลือกร้านแอป">
+        <a class="button" href="https://play.google.com/store/apps/details?id=com.veralearn.zxx.fruitstandbattle&amp;hl=th&amp;gl=TH&amp;utm_source=official_site&amp;utm_medium=landing_page&amp;utm_campaign=official_site_th_choice_oct2026">ดาวน์โหลดบน Google Play</a>
+        <a class="button" href="https://apps.apple.com/th/app/fruit-stand-battle/id6797271636">ดาวน์โหลดบน App Store</a>
+      </div>
     </section>
   </main>
   <footer>
