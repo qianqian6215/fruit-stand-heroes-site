@@ -3,22 +3,22 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>과일 가판대 전투: 타워 디펜스 | Android 오프라인 게임</title>
-  <meta name="description" content="한 레인이 무너지기 전에 이슬방울을 지금 쓸지 아낄지 선택하세요. 광고와 앱 내 구매 없이 즐기는 무료 Android 오프라인 5레인 타워 디펜스.">
+  <title>과일 가판대 전투 | iPhone·Android 무료 오프라인 타워 디펜스</title>
+  <meta name="description" content="한 레인이 무너지기 전에 이슬방울을 지금 쓸지 아낄지 선택하세요. iPhone, iPad, Android에서 광고와 앱 내 구매 없이 즐기는 무료 오프라인 5레인 타워 디펜스.">
   <meta name="theme-color" content="#fffaf0">
   <link rel="canonical" href="https://fruitstandbattle.com/ko/game-offline-android/">
   <link rel="alternate" hreflang="ko" href="https://fruitstandbattle.com/ko/game-offline-android/">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Fruit Stand Battle">
   <meta property="og:title" content="한 레인이 무너져요. 누구를 배치할까요?">
-  <meta property="og:description" content="이슬방울을 지금 쓸까요, 더 강한 영웅을 위해 아낄까요? Android에서 무료로 즐기는 5레인 오프라인 타워 디펜스.">
+  <meta property="og:description" content="이슬방울을 지금 쓸까요, 더 강한 영웅을 위해 아낄까요? iPhone, iPad, Android에서 무료로 즐기는 5레인 오프라인 타워 디펜스.">
   <meta property="og:url" content="https://fruitstandbattle.com/ko/game-offline-android/">
   <meta property="og:image" content="https://fruitstandbattle.com/assets/ko/01-lane-falling.jpg">
   <meta property="og:image:width" content="1080">
   <meta property="og:image:height" content="1920">
   <meta property="og:image:alt" content="과일 가판대 전투에서 한 레인이 위험에 처한 실제 전투 화면">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Android 무료 오프라인 타워 디펜스">
+  <meta name="twitter:title" content="iPhone·Android 무료 오프라인 타워 디펜스">
   <meta name="twitter:description" content="광고와 앱 내 구매 없이 세 개의 세계에서 다섯 레인을 지키세요.">
   <meta name="twitter:image" content="https://fruitstandbattle.com/assets/ko/01-lane-falling.jpg">
   <link rel="icon" href="../../assets/icons/leaf.svg" type="image/svg+xml">
@@ -31,6 +31,8 @@
     .hero { max-width:760px; }
     h1 { margin:.25rem 0 1rem; }
     .button { display:inline-block; padding:13px 20px; border-radius:999px; background:#087f6c; color:#fff; font-weight:800; text-decoration:none; box-shadow:0 8px 22px rgb(8 127 108 / 22%); }
+    .store-buttons { display:flex; flex-wrap:wrap; gap:10px; }
+    .cta .store-buttons { justify-content:center; }
     .trust { display:flex; flex-wrap:wrap; gap:10px; margin:24px 0 34px; padding:0; list-style:none; }
     .trust li { padding:7px 12px; border:1px solid #cddfba; border-radius:999px; background:rgb(255 255 255 / 78%); font-weight:700; }
     .screens { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:16px; margin:0 0 38px; }
@@ -61,10 +63,13 @@
     "url": "https://fruitstandbattle.com/ko/game-offline-android/",
     "image": "https://fruitstandbattle.com/assets/ko/01-lane-falling.jpg",
     "applicationCategory": "GameApplication",
-    "operatingSystem": "Android",
+    "operatingSystem": ["Android", "iOS"],
     "genre": ["Tower defense", "전략"],
     "playMode": "SinglePlayer",
-    "offers": {"@type":"Offer","price":"0","priceCurrency":"KRW","url":"https://play.google.com/store/apps/details?id=com.veralearn.zxx.fruitstandbattle&hl=ko&gl=KR"}
+    "offers": [
+      {"@type":"Offer","price":"0","priceCurrency":"KRW","url":"https://play.google.com/store/apps/details?id=com.veralearn.zxx.fruitstandbattle&hl=ko&gl=KR"},
+      {"@type":"Offer","price":"0","priceCurrency":"KRW","url":"https://apps.apple.com/kr/app/fruit-stand-battle/id6797271636"}
+    ]
   }
   </script>
 </head>
@@ -72,10 +77,13 @@
   <main>
     <header class="topbar"><a class="brand" href="../../?lang=ko">FRUIT STAND BATTLE</a><a href="../../?lang=ko">공식 사이트</a></header>
     <section class="hero" aria-labelledby="title">
-      <p class="eyebrow">GOOGLE PLAY에서 무료</p>
+      <p class="eyebrow">IPHONE, IPAD, ANDROID에서 무료</p>
       <h1 id="title">한 레인이 무너져요. 누구를 배치할까요?</h1>
       <p class="lead">이슬방울을 지금 써서 레인을 지킬까요, 더 강한 영웅을 위해 아낄까요? 다섯 레인을 살피고 보스가 오기 전에 결정하세요.</p>
-      <a class="button" href="https://play.google.com/store/apps/details?id=com.veralearn.zxx.fruitstandbattle&amp;hl=ko&amp;gl=KR&amp;utm_source=official_site&amp;utm_medium=landing_page&amp;utm_campaign=official_site_ko_choice_oct2026">Google Play에서 받기</a>
+      <div class="store-buttons" aria-label="앱 스토어 선택">
+        <a class="button" href="https://play.google.com/store/apps/details?id=com.veralearn.zxx.fruitstandbattle&amp;hl=ko&amp;gl=KR&amp;utm_source=official_site&amp;utm_medium=landing_page&amp;utm_campaign=official_site_ko_choice_oct2026">Google Play에서 받기</a>
+        <a class="button" href="https://apps.apple.com/kr/app/fruit-stand-battle/id6797271636">App Store에서 받기</a>
+      </div>
       <ul class="trust" aria-label="주요 특징"><li>오프라인 플레이</li><li>광고 없음</li><li>앱 내 구매 없음</li><li>계정 필요 없음</li></ul>
     </section>
     <section class="screens" aria-label="실제 게임 플레이 화면">
@@ -109,8 +117,11 @@
     </section>
     <section class="card cta" aria-labelledby="cta-title">
       <p class="eyebrow">팀이 기다리고 있어요</p><h2 id="cta-title">레인을 고르고 영웅을 배치하세요.</h2>
-      <p>Android에서 무료. 오프라인 플레이, 광고 없음.</p>
-      <a class="button" href="https://play.google.com/store/apps/details?id=com.veralearn.zxx.fruitstandbattle&amp;hl=ko&amp;gl=KR&amp;utm_source=official_site&amp;utm_medium=landing_page&amp;utm_campaign=official_site_ko_choice_oct2026">Google Play에서 받기</a>
+      <p>iPhone, iPad, Android에서 무료. 오프라인 플레이, 광고 없음.</p>
+      <div class="store-buttons" aria-label="앱 스토어 선택">
+        <a class="button" href="https://play.google.com/store/apps/details?id=com.veralearn.zxx.fruitstandbattle&amp;hl=ko&amp;gl=KR&amp;utm_source=official_site&amp;utm_medium=landing_page&amp;utm_campaign=official_site_ko_choice_oct2026">Google Play에서 받기</a>
+        <a class="button" href="https://apps.apple.com/kr/app/fruit-stand-battle/id6797271636">App Store에서 받기</a>
+      </div>
     </section>
   </main>
   <footer><a href="../../?lang=ko">공식 사이트</a><a href="../../press/">미디어와 크리에이터</a><a href="../../support/">지원</a><a href="../../privacy/">개인정보 처리방침</a><p>Fruit Stand Battle · 다섯 레인, 세 개의 세계, 하나의 과일 팀.</p></footer>
