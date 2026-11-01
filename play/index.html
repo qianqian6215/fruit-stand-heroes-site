@@ -28,6 +28,8 @@
     .store-actions a:nth-child(2) { background:#18362f; }
     .proof { display:flex; flex-wrap:wrap; gap:8px; list-style:none; padding:0; }
     .proof li { padding:7px 12px; border:1px solid #cddfba; border-radius:999px; background:white; font-weight:700; }
+    .gameplay { margin:32px 0; }
+    .gameplay video { display:block; width:100%; max-width:960px; height:auto; border-radius:14px; background:#102b28; box-shadow:0 12px 30px rgb(42 81 48 / 15%); }
     .screens { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:16px; margin:32px 0; }
     .screens figure { min-width:0; margin:0; }
     .screens img { display:block; width:100%; height:auto; aspect-ratio:16 / 9; object-fit:contain; border-radius:14px; background:#102b28; box-shadow:0 12px 30px rgb(42 81 48 / 15%); }
@@ -59,6 +61,14 @@
       <ul class="proof" aria-label="Game features">
         <li>Offline after installation</li><li>No ads</li><li>No in-app purchases</li>
       </ul>
+    </section>
+    <section class="gameplay" aria-labelledby="gameplay-title">
+      <h2 id="gameplay-title">See a real battle</h2>
+      <p>Watch Sunny Market, Moonlit Coast and Cloudcrest with the full English game HUD.</p>
+      <video controls playsinline controlslist="nodownload" preload="none" poster="../assets/gameplay-three-worlds-en-20261010.jpg" width="960" height="448" aria-label="11.9 seconds of real Fruit Stand Battle gameplay across all three worlds with the full English HUD">
+        <source src="../media/gameplay-three-worlds-en-20261010.mp4" type="video/mp4">
+        Your browser does not support video. The gameplay screenshots below show all three worlds.
+      </video>
     </section>
     <section class="screens" aria-label="Real gameplay screenshots">
       <figure><img src="../offline-android-game/assets/sunny-market.jpg" width="1600" height="900" alt="Sunny Market battle with five lanes, fruit defenders, a boss and the complete English game HUD" loading="eager"><figcaption>Sunny Market — pick the lane to defend.</figcaption></figure>
