@@ -279,6 +279,7 @@ document.querySelector('#gameplay-retry').addEventListener('click', startGamepla
   let saved; try { saved = localStorage.getItem('fruit-site-language'); } catch {}
   let active = 'en';
   const requested = match(new URL(location.href).searchParams.get('lang')) || match(saved) || (navigator.languages || [navigator.language]).map(match).find(Boolean) || 'en';
+  const hasRegionHint = region => new RegExp(`[-_]${region}(?:$|[-_])`, 'i').test(navigator.language || '');
   const control = document.createElement('label'); control.className = 'language-control'; control.dataset.noTranslate = '';
   const label = document.createElement('span'); label.textContent = 'Language';
   const select = document.createElement('select'); select.id = 'site-language'; select.setAttribute('aria-label','Language');
@@ -391,7 +392,7 @@ document.querySelector('#gameplay-retry').addEventListener('click', startGamepla
       setGameplayMedia(code);
       setStoreCampaign(code);
       for (const guide of document.querySelectorAll('[data-locale-guide]')) {
-        guide.toggleAttribute('hidden', guide.dataset.localeGuide !== code);
+        guide.toggleAttribute('hidden', guide.dataset.localeGuide !== code || (guide.dataset.regionGuide && !hasRegionHint(guide.dataset.regionGuide)));
       }
       walk();
       if (remember) {
