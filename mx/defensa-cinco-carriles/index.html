@@ -34,6 +34,10 @@
     .screens figure { min-width:0; margin:0; }
     .screens img { display:block; width:100%; height:auto; aspect-ratio:16 / 9; object-fit:contain; border-radius:14px; background:#102b28; box-shadow:0 12px 30px rgb(42 81 48 / 15%); }
     .screens figcaption { padding-top:8px; color:#52665c; }
+    .gameplay { margin:32px 0; }
+    .gameplay video { display:block; width:min(100%,960px); height:auto; margin:16px auto 0; border-radius:14px; background:#102b28; box-shadow:0 12px 30px rgb(42 81 48 / 15%); }
+    .gameplay .store-actions { justify-content:center; }
+    .gameplay p { color:#52665c; }
     .final-choice { padding:24px; border-radius:18px; background:#f4faed; text-align:center; }
     .final-choice .store-actions { justify-content:center; }
     footer { width:min(1060px,calc(100% - 32px)); margin:0 auto; padding-bottom:36px; color:#61716b; }
@@ -67,9 +71,20 @@
       <figure><img src="../../offline-android-game/assets/moonlit-coast.jpg" width="1600" height="900" alt="Batalla en Moonlit Coast con defensores frutales, Gotas de Rocío y toda la interfaz del juego en inglés" loading="lazy"><figcaption>Moonlit Coast: decide cuándo gastar.</figcaption></figure>
       <figure><img src="../../offline-android-game/assets/cloudcrest.jpg" width="1600" height="900" alt="Batalla en Cloudcrest con cinco carriles y toda la interfaz del juego en inglés" loading="lazy"><figcaption>Cloudcrest: cambia tu formación.</figcaption></figure>
     </section>
+    <section class="gameplay" aria-labelledby="gameplay-title">
+      <h2 id="gameplay-title">Mira los cinco carriles en acción</h2>
+      <p>11,9 segundos de juego real en Sunny Market, Moonlit Coast y Cloudcrest. El video no tiene sonido y muestra la interfaz completa en inglés.</p>
+      <video controls playsinline controlslist="nodownload" preload="none" poster="../../assets/gameplay-three-worlds-en-20261010.jpg" width="960" height="448" aria-label="Juego real en Sunny Market, Moonlit Coast y Cloudcrest con la interfaz completa en inglés">
+        <source src="../../media/gameplay-three-worlds-en-20261010.mp4" type="video/mp4">
+      </video>
+      <div class="store-actions" aria-label="Descarga el juego después de ver la partida">
+        <a href="https://apps.apple.com/mx/app/fruit-stand-battle/id6797271636?pt=126491309&amp;ct=official_site_mx_20261031&amp;mt=8">Descargar en App Store</a>
+        <a href="https://play.google.com/store/apps/details?id=com.veralearn.zxx.fruitstandbattle&amp;hl=es_MX&amp;gl=MX&amp;utm_source=official_site&amp;utm_medium=landing_page&amp;utm_campaign=official_site_mx_20261031">Consíguelo en Google Play</a>
+      </div>
+    </section>
     <section class="final-choice" aria-labelledby="choice-title">
       <h2 id="choice-title">¿Listo para tu primera batalla?</h2>
-      <p>Elige la tienda de tu dispositivo. Las capturas muestran partidas reales con la interfaz completa; el texto dentro del juego está en inglés.</p>
+      <p>Elige la tienda de tu dispositivo. Las capturas y el video muestran partidas reales; el texto dentro del juego está en inglés.</p>
       <div class="store-actions" aria-label="Elige tu tienda de aplicaciones">
         <a href="https://apps.apple.com/mx/app/fruit-stand-battle/id6797271636?pt=126491309&amp;ct=official_site_mx_20261031&amp;mt=8">Descargar en App Store</a>
         <a href="https://play.google.com/store/apps/details?id=com.veralearn.zxx.fruitstandbattle&amp;hl=es_MX&amp;gl=MX&amp;utm_source=official_site&amp;utm_medium=landing_page&amp;utm_campaign=official_site_mx_20261031">Consíguelo en Google Play</a>
