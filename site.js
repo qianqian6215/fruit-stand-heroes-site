@@ -78,6 +78,18 @@ window.FRUIT_CONTENT = {
 'use strict';
 document.body.classList.add('js');
 const content = window.FRUIT_CONTENT;
+// Put the relevant store first for Android visitors while keeping both stores visible.
+// The links and their analytics events stay the same, so source attribution is preserved.
+if (/Android/i.test(navigator.userAgent)) {
+  document.querySelectorAll('.hero-actions, .game-actions, .download-links').forEach(group => {
+    const play = group.querySelector('a[data-umami-event="google_play_click"]');
+    const appStore = group.querySelector('a[data-umami-event="app_store_click"]');
+    if (!play || !appStore) return;
+    group.insertBefore(play, appStore);
+    play.classList.remove('outline');
+    appStore.classList.add('outline');
+  });
+}
 const dialog = document.querySelector('#story-dialog');
 const storyVideo = document.querySelector('#story-video');
 const storyStatus = document.querySelector('#story-status');
